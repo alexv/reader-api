@@ -22,13 +22,13 @@ func Start() {
 
 func hello(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"message": "heya",
+		"message": "hello back to you!",
 	})
 }
 
 func getFeed(c *gin.Context) {
 	fp := gofeed.NewParser()
-	feed, _ := fp.ParseURL("http://www.producthunt.com/feed")
+	feed, _ := fp.ParseURL(c.Query("url"))
 	c.JSON(200, feed)
 }
 
