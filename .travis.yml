@@ -1,9 +1,3 @@
 language: go
-services:
-  - docker
-script:
-- make build
-- test -f bin/amd64/myapp
-- make container
-- docker images | grep thockin/myapp-amd64
-- make test
+go:
+  - master
